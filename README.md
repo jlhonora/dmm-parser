@@ -14,4 +14,4 @@ To run, please install the python libraries `serial` and `bitarray` (try with `p
 
 ### Documentation ###
 
-I based this work in the documents available in the `doc` folder.
+I based this work on the documents available in the `doc` folder.
