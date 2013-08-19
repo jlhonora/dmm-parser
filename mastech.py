@@ -8,8 +8,7 @@
 # Documentation taken from http://rahmyzdhyfbr.tripod.com/
 # 
 # To Do:
-#  - Support measurements besides Voltage and Current
-#  - Better documentation
+#  - Better documentation on the DMM's format
 #
 # @author: JLH
 # @date: Aug 2013
@@ -112,6 +111,12 @@ def parse_data(line):
 			unit_str = unit_str + 'A'
 		elif ms_dict[12][2]:
 			unit_str = unit_str + 'Ohm'
+		elif ms_dict[12][3]:
+			unit_str = unit_str + 'F'
+		elif ms_dict[14][2]:
+			unit_str = unit_str + 'Celcius'
+		elif ms_dict[13][1]:
+			unit_str = unit_str + 'Hz'
 		if voltage:
 			if ms_dict[1][2]:
 				unit_str = unit_str + ' DC'
