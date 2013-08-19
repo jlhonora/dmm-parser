@@ -76,7 +76,11 @@ def parse_data(line):
 		fourth_ba = ms_dict[9][0:4] + ms_dict[8][0:3]
 
 		# Build the number string
-		num_str = str(num_dict[ord(first_ba.tobytes())])
+		num_str = ""
+		# Check negative sign
+		if ms_dict[2][3]:
+			num_str = num_str + '-'
+		num_str = num_str + str(num_dict[ord(first_ba.tobytes())])
 		if ms_dict[4][3] == True:
 			num_str = num_str + "."
 		num_str = num_str + str(num_dict[ord(second_ba.tobytes())])
