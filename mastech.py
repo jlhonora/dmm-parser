@@ -16,6 +16,7 @@
 
 import serial
 import os
+from datetime import datetime
 from bitarray import bitarray
 
 # Get any serial port from /dev/
@@ -117,8 +118,10 @@ def parse_data(line):
 			elif ms_dict[1][3]:
 				unit_str = unit_str + ' AC'
 
-		# Print number and units
-		print num_str, unit_str
+		now = datetime.now()
+		timestamp = "[%02d:%02d:%04.1f]" % (now.hour, now.minute, now.second + now.microsecond / 1e6)
+		# Print timestamp, number and units
+		print timestamp, num_str, unit_str
 	except Exception, e:
 		print "Couldn't parse line"
 		print str(e)
