@@ -92,15 +92,21 @@ def parse_data(line):
 		voltage = False
 		if ms_dict[10][2]:
 			unit_str = unit_str + 'n'
+		elif ms_dict[10][1]:
+			unit_str = unit_str + 'k'
 		elif ms_dict[10][3]:
 			unit_str = unit_str + 'u'
 		elif ms_dict[11][3]:
 			unit_str = unit_str + 'm'
+		elif ms_dict[11][1]:
+			unit_str = unit_str + 'M'
 		if ms_dict[13][2]:
 			unit_str = unit_str + 'V'
 			voltage = True
 		elif ms_dict[13][3]:
 			unit_str = unit_str + 'A'
+		elif ms_dict[12][2]:
+			unit_str = unit_str + 'Ohm'
 		if voltage:
 			if ms_dict[1][2]:
 				unit_str = unit_str + ' DC'
