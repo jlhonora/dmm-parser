@@ -53,7 +53,7 @@ def print_hex(line):
 def num2binstr(num):
 	return ''.join(num & (1 << i) and '1' or '0' for i in range(7,-1,-1))[::-1]
 
-num_dict = {0x7D: 0, 0x05: 1,0x5B: 2,0x1F: 3,0x27: 4,0x3E: 5,0x7E: 6,0x15: 7,0x7F: 8,0x3F: 9}
+num_dict = {0: ' ', 0x68: 'L', 0x7D: 0, 0x05: 1,0x5B: 2,0x1F: 3,0x27: 4,0x3E: 5,0x7E: 6,0x15: 7,0x7F: 8,0x3F: 9}
 # Core function, processes the serial line and converts it to a number
 def parse_data(line):
 	try:
