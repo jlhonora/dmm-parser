@@ -12,6 +12,8 @@ Currently supported for Linux and Mac OS X. To use in Windows, simply change the
 
 To run, please install the python libraries `serial` and `bitarray` (try with `pip install serial bitarray`).
 
+Note: Using in Mac OS X? Check [here](http://stackoverflow.com/questions/22313407/clang-error-unknown-argument-mno-fused-madd-python-package-installation-fa) if you're having trouble building bitarray.
+
 ### Documentation ###
 
 I based this work on the documents available in the `doc` folder.
