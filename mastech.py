@@ -15,6 +15,7 @@
 
 import serial
 import os
+import sys
 from datetime import datetime
 from bitarray import bitarray
 
@@ -127,6 +128,8 @@ def parse_data(line):
 		timestamp = "[%02d:%02d:%04.1f]" % (now.hour, now.minute, now.second + now.microsecond / 1e6)
 		# Print timestamp, number and units
 		print timestamp, num_str, unit_str
+		# Flush the output so that we can see it in a log
+		sys.stdout.flush()
 	except Exception, e:
 		print "Couldn't parse line"
 		print str(e)
