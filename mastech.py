@@ -134,14 +134,17 @@ def parse_data(line):
 		print "Couldn't parse line"
 		print str(e)
 	
-def run(serial_port = None):
+def run(serial_port = None, name = None):
 	if serial_port == None:
-		serial_port = get_serial_port()
+		serial_port = get_serial_port(name=name)
 	safe_open(serial_port)
 	while True:
 		parse_data(serial_port.read(14))
 
 print "Starting Mastech MS8226 DMM parser"
-run()
+if len(sys.argv) > 1:
+    run(name=sys.argv[1])
+else:
+    run()
 serial_port.close()
 print "Exiting"
