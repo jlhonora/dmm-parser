@@ -1,12 +1,20 @@
-## RS232 parser for Mastech MS8226 and MS8226T Multimeters ##
+## RS232 parser for Mastech Multimeters ##
 
-This script implements a parser for the Mastech MS8226(T) series Digital Multimeters. To use the script, simply connect the RS232 optical cable to your PC and run:
+This script implements a parser for Mastech Digital Multimeters. To use the script, simply connect the RS232 optical cable to your PC and run:
 
 ```
-	./mastech.py
+./mastech.py
 ```
 
 Currently supported for Linux and Mac OS X. To use in Windows, simply change the serial port name to whatever COM you are using.
+
+**Supported models**
+
+The following models are reported to work with this script:
+
+ - MS8250B
+ - MS8226
+ - MS8226T
 
 ### Dependencies ###
 
