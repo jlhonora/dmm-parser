@@ -14,7 +14,7 @@
 # @date: Aug 2013
 
 import serial
-import os
+import glob
 import sys
 from datetime import datetime
 from bitarray import bitarray
@@ -23,15 +23,22 @@ from bitarray import bitarray
 # works in Linux and Mac, should be modified
 # for Windows use
 def get_serial_port_name():
-	tty_str = '/dev/' + os.popen("ls /dev/ | grep -E 'tty(\.usb|USB)' | head -1").read().strip()	
-	return tty_str
+	names = glob.glob('/dev/ttyusb*') + glob.glob('/dev/ttyUSB*')
+	if len(names) == 0:
+		print 'No serial port found!'
+		sys.exit(1)
+	elif len(names) > 1:
+		print 'More than one serial port found: ',
+		for name in names:
+			print name,
+		print
+	return names[0]
 
 # Gets a name for the serial port (if not specified)
 # and creates the serial port
-def get_serial_port(name=''):
-	if name == '':
+def get_serial_port(name=None):
+	if name is None:
 		name = get_serial_port_name()
-		assert name != '', 'No serial port found'
 		print "Automatically selecting %s as serial port" % name
 	s = serial.Serial(name, 
 					  baudrate     = 2400, 
