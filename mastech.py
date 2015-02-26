@@ -2,11 +2,11 @@
 #
 # -*- coding: utf-8 -*-
 #
-# @description 
+# @description
 # Parses data from a Mastech MS8226
 # and MS8226T digital multimeter (DMM)
 # Documentation taken from http://rahmyzdhyfbr.tripod.com/
-# 
+#
 # To Do:
 #  - Better documentation on the DMM's format
 #
@@ -23,12 +23,12 @@ from bitarray import bitarray
 # works in Linux and Mac, should be modified
 # for Windows use
 def get_serial_port_name():
-	names = glob.glob('/dev/ttyusb*') + glob.glob('/dev/ttyUSB*')
+	names = glob.glob('/dev/tty.usb*') + glob.glob('/dev/ttyUSB*')
 	if len(names) == 0:
 		print 'No serial port found!'
 		sys.exit(1)
 	elif len(names) > 1:
-		print 'More than one serial port found: ',
+		print "%d serial ports found: " % len(names),
 		for name in names:
 			print name,
 		print
@@ -40,11 +40,11 @@ def get_serial_port(name=None):
 	if name is None:
 		name = get_serial_port_name()
 		print "Automatically selecting %s as serial port" % name
-	s = serial.Serial(name, 
-					  baudrate     = 2400, 
-					  bytesize     = serial.EIGHTBITS, 
-					  parity       = serial.PARITY_NONE, 
-					  stopbits     = serial.STOPBITS_ONE, 
+	s = serial.Serial(name,
+					  baudrate     = 2400,
+					  bytesize     = serial.EIGHTBITS,
+					  parity       = serial.PARITY_NONE,
+					  stopbits     = serial.STOPBITS_ONE,
 					  timeout      = 0.2)
 	return s
 
@@ -140,7 +140,7 @@ def parse_data(line):
 	except Exception, e:
 		print "Couldn't parse line"
 		print str(e)
-	
+
 def run(serial_port = None, name = None):
 	if serial_port == None:
 		serial_port = get_serial_port(name=name)
