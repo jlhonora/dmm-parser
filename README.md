@@ -15,6 +15,8 @@ The following models are reported to work with this script:
  - MS8250B
  - MS8226
  - MS8226T
+ - TekPower TP4000ZC
+ - Voltcraft VC-820
 
 ### Dependencies ###
 
