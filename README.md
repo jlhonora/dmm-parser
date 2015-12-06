@@ -1,9 +1,9 @@
-## RS232 parser for Mastech Multimeters ##
+## Command line parser for RS232 Multimeters ##
 
-This script implements a parser for Mastech Digital Multimeters. To use the script, simply connect the RS232 optical cable to your PC and run:
+This script implements a parser for RS232 Digital Multimeters (Mastech family, among others). To use the script, simply connect the RS232 optical cable to your PC and run:
 
 ```
-./mastech.py
+./dmm-parser.py
 ```
 
 Currently supported for Linux and Mac OS X. To use in Windows, simply change the serial port name to whatever COM you are using.
