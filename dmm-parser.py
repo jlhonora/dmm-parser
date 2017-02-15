@@ -131,6 +131,12 @@ def parse_data(line):
 			elif ms_dict[1][3]:
 				unit_str = unit_str + ' AC'
 
+		# check for the HOLD and REL flags
+		if ms_dict[12][0]:
+			unit_str = unit_str + ' (HOLD)'
+		if ms_dict[12][1]:
+			unit_str = unit_str + ' (REL)'
+
 		now = datetime.now()
 		timestamp = "[%02d:%02d:%04.1f]" % (now.hour, now.minute, now.second + now.microsecond / 1e6)
 		# Print timestamp, number and units
