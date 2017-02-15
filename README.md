@@ -17,10 +17,11 @@ The following models are reported to work with this script:
  - MS8226T
  - TekPower TP4000ZC
  - Voltcraft VC-820
+ - Voltcraft VC-820-1
 
 ### Dependencies ###
 
-To run, please install the python libraries `serial` and `bitarray` (try with `pip install serial bitarray`).
+To run, please install the python libraries `pyserial` and `bitarray` (try with `pip install pyserial bitarray`).
 
 Note: Using in Mac OS X? Check [here](http://stackoverflow.com/questions/22313407/clang-error-unknown-argument-mno-fused-madd-python-package-installation-fa) if you're having trouble building bitarray.
 

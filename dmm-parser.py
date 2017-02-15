@@ -45,7 +45,7 @@ def get_serial_port(name=None):
 					  bytesize     = serial.EIGHTBITS,
 					  parity       = serial.PARITY_NONE,
 					  stopbits     = serial.STOPBITS_ONE,
-					  timeout      = 0.2)
+					  timeout      = 0.23)
 	return s
 
 def safe_open(serial_port):
